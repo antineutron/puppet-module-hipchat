@@ -3,9 +3,10 @@ class hipchat(
 ) {
 
   if $manage_repo {
-    require hipchat::repo
+    include hipchat::repo
+    Package['hipchat'] -> Class['hipchat::repo']
   }
-  
+
   package { 'hipchat':
     ensure => installed,
   }
