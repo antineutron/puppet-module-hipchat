@@ -8,11 +8,11 @@ class hipchat::repo {
         release     => 'stable',
         repos       => 'main',
         include_src => false,
-      }
       
-      apt::key { 'hipchat':
-        id     => '69F57C04EA38EEE7A47E9BCCAAD4AA21729B5780',
-        source => 'https://www.hipchat.com/keys/hipchat-linux.key',
+        key => {
+          id     => '69F57C04EA38EEE7A47E9BCCAAD4AA21729B5780',
+          source => 'https://www.hipchat.com/keys/hipchat-linux.key',
+        },
       }
 
     }
