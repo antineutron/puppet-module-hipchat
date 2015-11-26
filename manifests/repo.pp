@@ -4,10 +4,12 @@ class hipchat::repo {
     'Debian': {
       
       apt::source { 'hipchat':
-        location    => 'http://downloads.hipchat.com/linux/apt',
-        release     => 'stable',
-        repos       => 'main',
-        include_src => false,
+        location => 'http://downloads.hipchat.com/linux/apt',
+        release  => 'stable',
+        repos    => 'main',
+        include  => {
+          src => false,
+        },
       
         key => {
           id     => '69F57C04EA38EEE7A47E9BCCAAD4AA21729B5780',
