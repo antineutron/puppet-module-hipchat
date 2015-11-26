@@ -8,7 +8,7 @@ class hipchat(
   }
 
   package { 'hipchat':
-    ensure => installed,
+    ensure => present,
   }
 
 }
