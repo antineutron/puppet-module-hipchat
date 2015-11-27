@@ -4,7 +4,7 @@ class hipchat(
 
   if $manage_repo {
     include hipchat::repo
-    Package['hipchat'] -> Class['hipchat::repo']
+    Class['hipchat::repo'] => Package['hipchat']
   }
 
   package { 'hipchat':
